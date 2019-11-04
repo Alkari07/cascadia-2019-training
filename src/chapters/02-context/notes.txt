@@ -2,4 +2,16 @@
 - a context provider gives a set of context variables 
 - any child of that provider can use "consumer" to access the context from the provider
 - so it allows you to "wrap up" several state  props into a single provider and pass them down to all children
+- this is a way to pass down "props" that you need to change
+- the goal of the context feature is to get around the "prop drilling" problem, like if you have a global board game state
+-- passing that down as a read-only prop and then bubbling back up manipulations to the board game state is wordy
+-- this allows you to manipulate it directly from child components
+- providers typically go in the App component and wrap the app (state, authentication)
+//in index.js
+<AuthProvider>
+    <App />
+</AuthProvider>;
 
+import {} from "../../utils/email"; // the {} syntax imports all exported objects in the export into to local context
+objects in a component state are accessible as locally defined variables in all functions (no need for this)
+const  {isAuthenticated, logout, login} = React.useContext(BaseContext); // this "explodes" out the object properties

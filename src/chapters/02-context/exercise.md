@@ -12,7 +12,7 @@
 
 2. In index.js render the newly created AppProvider with the rest of the app as children.
 
-3. Move the polling functionality from the Inbox component to the context
+3. Move the polling functionality from index.js to the context
 Provider component.
 
 4. Update the Inbox component to use the new context Consumer.

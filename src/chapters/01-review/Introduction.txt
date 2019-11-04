@@ -56,4 +56,11 @@ Button.propTypes = {
 -- shouldComponenetUpdate(): called before render
 -- componentDidUpdate(): called after render completes
 
+--gotchas from exercise
+- single curly braces returns an EXPRESSION, not CODE.  Therefore it is like one line, not a script structure
+-- ternary operator ok 
+-- if-else is not
+- if you need code to do more, have your expression be the invocation of a function
+
+
 

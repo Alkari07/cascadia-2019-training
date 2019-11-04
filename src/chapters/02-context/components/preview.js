@@ -1,7 +1,9 @@
 import React from "react";
 import trash from "../../../assets/trash.png";
+import {BaseContext} from '../context';
 
-export default function Preview({ id, name, title, body, removeEmail }) {
+export default function Preview({ id, name, title, body }) {
+  const {removeEmail} = React.useContext(BaseContext);
   return (
     <li className="preview">
       <h3 className="preview-name">{name}</h3>

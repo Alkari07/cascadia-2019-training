@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "@reach/router";
+import {BaseContext} from '../context';
 
-export default function NavBar({ isAuthenticated, login, logout }) {
+export default function NavBar() {
+  //explode out the object by specifying the properties I want
+  const  {isAuthenticated, logout, login} = React.useContext(BaseContext);
   return (
     <nav className="navbar">
       <Link to={"/"}>
