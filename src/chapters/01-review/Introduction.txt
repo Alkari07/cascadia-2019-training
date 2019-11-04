@@ -1,0 +1,59 @@
+- fundamental use case is reuse of UI components
+- declarative (describes what you want and react parses) not imperative (direct dom manipulation in js code)
+- Uses what's called the VDOM, a virtual dom in memory that React uses an intermediary to maniuplate and drive dom rendering
+- a component at it's heart is just a simple function
+const Welcome = () =><h1>Hello, World!</h1>;
+
+typically, props are the argument that you pass into the jsx "function"
+
+- class components extend React.Compnoent and use the this keyword.  They are the old way of doing things
+
+- composition vs inheritance
+-- react uses composition (ie, mixin paradigm instead of OO)
+
+built in react elements are lower case (ie <h1>)
+custom React components are TitleCase
+
+- React.Fragment is used to avoid having uneeded empty divs (since React requires a return of exactly one base jsx element OR a fragment)
+- <> is a shorthand for React.Fragment
+
+- functional components take up SIGNIFICANTLY less space when compiled to javascript
+
+- props are always the first argument of a component.  they are passed down from parent and are read only
+-- in class components you access props through this.props
+-- ReactClass.propTypes is how you define the "types" of the props - basically a function signature
+Button.propTypes = {
+    onClick: PropTypes.function // onClick must be a function
+}
+
+- props.children is a special property that will render all children components in that spot in jsx (loops through them)
+- props.key and props.ref are also reserved
+-- key: unique identifier for list items
+-- ref: reference to actual Dom element
+-- ex: 
+<input
+    type='checkbox'
+    ref = {(domeElement) => //handle weirdness you need to do with the actual dom node here}
+/>
+
+- spread operator ...
+-- takes an object and returns all the key-value pairs
+
+- render props: encapsulate logic for rendering dynamic declarative
+
+- state tracks the state variables of a component
+
+- setState(newState, () => {
+    //this is done asynchronously!!
+}) ;
+
+- Lifecyle methods
+//only used in class components.  Hooks are used for functional components
+-- constructor() runs on first render, before anything else, only called once
+-- render() output of yourcomponent, called repeatedly
+-- componenetDidMount() called once updates are in the DOM, called only once
+-- componentWillUnmount() React is preparing to remove your component, called only once at end of Lifecyle
+-- shouldComponenetUpdate(): called before render
+-- componentDidUpdate(): called after render completes
+
+

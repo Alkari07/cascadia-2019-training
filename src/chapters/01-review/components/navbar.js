@@ -1,14 +1,21 @@
 import React from "react";
 import { Link } from "@reach/router";
 
-export default function NavBar() {
+export default function NavBar({isAuthenticated, logout, login}) {
   return (
     <nav className="navbar">
       <Link to={"/"}>
         <h1 className="nav-logo">Formidamail</h1>
       </Link>
       <ul className="nav-items">
-        <li className="nav-item">Log in</li>
+      {
+       isAuthenticated ?(
+       <li className="nav-item" onClick={logout}>Log Out</li>
+        ) : (
+        <li className="nav-item" onClick={login}>Log in</li>
+        )
+      }
+        
       </ul>
     </nav>
   );

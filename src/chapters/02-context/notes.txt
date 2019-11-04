@@ -1,0 +1,5 @@
+- context addresses the need of a global state
+- a context provider gives a set of context variables 
+- any child of that provider can use "consumer" to access the context from the provider
+- so it allows you to "wrap up" several state  props into a single provider and pass them down to all children
+
