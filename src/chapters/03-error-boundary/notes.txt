@@ -1,0 +1,16 @@
+- portal uses
+-- multiwindow apps
+-- dialogs/modals
+-- tooltips
+-- support widgets
+-- context beyond parent container
+-- basically, high z axis other components
+
+- Portal API is pretty simple
+- return ReactDOM.createPortal(document.getById('#some dom element to bind to your portal'));
+
+- Error boundaries
+-- allow for graceful fallback if rendering errors
+-- prevent full app crashes that causes an error in one part of app to cause the rest to be unusable
+-- componentDidCatch(error, errorInfo) - triggered when component class (not functional yet) generates an error
+-- getDerivedStateFromError(error) - allows you to set a new state based on the error - allows you to recover the state of the app
