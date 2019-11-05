@@ -1,0 +1,37 @@
+-hooks 
+
+- useState
+-- instead of setting this.state in constructor, you can use useState
+const [name, setName] = useState("");
+// first return of useState is your value, "", which is set to name
+// second is the updater function
+
+- useEffect
+-- hook that applies side-effects to functional components
+-- takes the place of class life cycle effects
+-- by default after each render
+-- useEffects are used to "register" eventListeners that are outside the structure, ie document.addEventListener('keypress', onKeypress)
+-- onKeypress here is defined as a useEffect() property
+-- what is removed from the component is the remove listener function (or other cleanup action)
+-- in this case, we only want this to run once, so send an empty array to the component dependency array
+-- the useEffect code is also reuseable, as opposed to a lifecycle function which is specifc to that component
+-- remember, useEffect runs on component rerender every time by default
+- useEffect cannot be defined as asynchronous, but it can contain a definition for an asynchronous method and then invoke it
+-- the prop definition array is what we define as the props being 'watched' that defines what variable changes triggers the useEffect
+    invocation
+
+- useContext
+-- this allows you to get a consumer context value variable without having to do the higher order component or render props
+
+- useCallback
+-- having to reallocate/deallocate functions (like login) every time a render change occurs
+-- momizes a callback so that it only is allocated/deallocated out of memory when some specific variable in dependency array changes
+-- memoization is the tradeoff of sacrificing space in memory for speed, since the function allocation does not need to be rerun but
+    the function must be persisted in memory
+
+- useMemo
+-- memoizes a value or result of a function
+-- if the arguments of a function don't change, it will just access the result directly from memory
+
+- useRef: stores a value of a dom to avoid domrerender
+- useReducer: does the same thing like "redux"
