@@ -35,3 +35,4 @@ const [name, setName] = useState("");
 
 - useRef: stores a value of a dom to avoid domrerender
 - useReducer: does the same thing like "redux"
+

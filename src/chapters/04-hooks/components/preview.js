@@ -1,5 +1,6 @@
 import React from "react";
-import { AppContext } from "../context";
+import { useEmail } from "../context/email-context";
+import { useAuth } from "../context/auth-context";
 import trash from "../../../assets/trash.png";
 
 export default function Preview({ id, name, title, body }) {
@@ -7,7 +8,7 @@ export default function Preview({ id, name, title, body }) {
   // if (name === "Taylor Swift") {
   //   throw new Error("Bad Blood");
   // }
-  const {removeEmail} = React.useContext(AppContext);
+  const {removeEmail} = useEmail();
 
   return (
     <div className="preview">

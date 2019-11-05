@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "@reach/router";
-import { AppContext } from "../context";
+import { useAuth } from "../context/auth-context";
 
 export default function NavBar() {
-  const {isAuthenticated, logout, login} = React.useContext(AppContext);
+  const {isAuthenticated, logout, login} = useAuth();
   
   return (
     <nav className="navbar">
