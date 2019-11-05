@@ -34,5 +34,18 @@ const [name, setName] = useState("");
 -- if the arguments of a function don't change, it will just access the result directly from memory
 
 - useRef: stores a value of a dom to avoid domrerender
-- useReducer: does the same thing like "redux"
+-- used to get a reference to a specific mutable value
+-- usually used to point to a dom element for something like blur
+-- does not cause a rerender if the ref is changed through that pointer
+-- so you could use that to store an instance variable, like an object to remember the previous state (undo functionality?)
 
+- useReducer: does the same thing like "redux"
+(var1, var2) => newstate
+- in order to update state now you have to use a dispatch function
+
+- cannot call hooks from inside control statements (if, loops)
+-- always put hooks at the top of functional components
+-- if you don't want a hook to run based on a variable condition, put the if   
+    statement inside the hook, not around the hook invocation/definition
+
+- useEffect MUST have all variables that might change inside it defined as dependencies or those values are locked forever
